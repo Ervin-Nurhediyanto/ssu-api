@@ -1,0 +1,5 @@
+module.exports.get = require('./get')
+module.exports.insert = require('./insert')
+module.exports.find = require('./find')
+module.exports.update = require('./update')
+module.exports.delete = require('./delete')

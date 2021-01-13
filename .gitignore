@@ -1,0 +1,12 @@
+# Test
+.nyc_output
+coverage
+
+# Modules
+node_modules
+
+# Logs
+logs
+
+# Environment
+.env
