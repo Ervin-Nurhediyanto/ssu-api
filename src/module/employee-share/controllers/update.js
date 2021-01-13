@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     const { group, name, score, periodeFrom, periodeTo, nameCreator, status } = req.body
 
     const EmployeeValue = databaseConnection.getDatabase().collection('employees-value')
-    const Employee = databaseConnection.getDatabase().collection('employees')
+    // const Employee = databaseConnection.getDatabase().collection('employees')
     const location = databaseConnection.getDatabase().collection('locations')
 
     const dataEmployeeValue = await EmployeeValue
@@ -80,17 +80,6 @@ module.exports = async (req, res, next) => {
         updated: result.value
       })
     } else {
-      await Employee.findOneAndUpdate({
-        _id: ObjectID(dataEmployeeValue[0].idEmployee)
-      }, {
-        $set: {
-          total: dataEmployeeValue[0].total,
-          salary
-        }
-      }, {
-        returnOriginal: false
-      })
-
       const result = await EmployeeValue.findOneAndUpdate({
         _id: ObjectID(id)
       }, {
@@ -103,6 +92,17 @@ module.exports = async (req, res, next) => {
       }, {
         returnOriginal: false
       })
+
+      // await Employee.findOneAndUpdate({
+      //   _id: ObjectID(dataEmployeeValue[0].idEmployee)
+      // }, {
+      //   $set: {
+      //     total: dataEmployeeValue[0].total,
+      //     salary
+      //   }
+      // }, {
+      //   returnOriginal: false
+      // })
 
       res.status(200).json({
         updated: result.value

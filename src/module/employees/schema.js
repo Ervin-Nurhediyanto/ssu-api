@@ -14,8 +14,8 @@ module.exports = {
       description: 'must be a number'
     },
     salary: {
-      bsonType: 'number',
-      description: 'must be a number'
+      bsonType: 'string',
+      description: 'must be a string'
     },
     idProject: {
       bsonType: 'string',
