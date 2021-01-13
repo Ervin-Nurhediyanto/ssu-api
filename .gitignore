@@ -9,4 +9,4 @@ node_modules
 logs
 
 # Environment
-.env
+# .env
