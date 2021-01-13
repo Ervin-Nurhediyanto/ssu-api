@@ -62,7 +62,7 @@ module.exports = async (req, res, next) => {
         }
         //
 
-        salary = rupiah
+        salary = Number(rupiah)
       }
 
       const result = await EmployeeValue.findOneAndUpdate({
@@ -85,17 +85,6 @@ module.exports = async (req, res, next) => {
     } else {
       console.log('status: ' + status)
 
-      // await Employee.findOneAndUpdate({
-      //   _id: ObjectID(dataEmployeeValue[0].idEmployee)
-      // }, {
-      //   $set: {
-      //     total: dataEmployeeValue[0].total,
-      //     salary
-      //   }
-      // }, {
-      //   returnOriginal: false
-      // })
-
       const result = await EmployeeValue.findOneAndUpdate({
         _id: ObjectID(id)
       }, {
@@ -104,6 +93,18 @@ module.exports = async (req, res, next) => {
           nameCreator,
           periodeFrom,
           periodeTo
+        }
+      }, {
+        returnOriginal: false
+      })
+
+      await Employee.findOneAndUpdate({
+        // _id: ObjectID(dataEmployeeValue[0].idEmployee)
+        _id: ObjectID(result.value.updated.idEmployee)
+      }, {
+        $set: {
+          total: result.value.updated.total,
+          salary: result.value.updated.salary
         }
       }, {
         returnOriginal: false
