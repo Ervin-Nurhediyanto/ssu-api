@@ -7,7 +7,6 @@ module.exports = async (req, res, next) => {
     const { group, name, score, periodeFrom, periodeTo, nameCreator, status } = req.body
 
     const EmployeeValue = databaseConnection.getDatabase().collection('employees-value')
-    // const Employee = databaseConnection.getDatabase().collection('employees')
     const location = databaseConnection.getDatabase().collection('locations')
 
     const dataEmployeeValue = await EmployeeValue
@@ -97,20 +96,6 @@ module.exports = async (req, res, next) => {
       }, {
         returnOriginal: false
       })
-
-      // // Update Employee
-      // await Employee.findOneAndUpdate({
-      //   _id: ObjectID(dataEmployeeValue[0].idEmployee)
-      //   // _id: ObjectID('5ffe6e4aa2bdd61e78a82d8c')
-      // }, {
-      //   $set: {
-      //     total: Number(result.total),
-      //     salary: Number(result.salary)
-      //   }
-      // }, {
-      //   returnOriginal: false
-      // })
-      // //
 
       res.status(200).json({
         updated: result.value
