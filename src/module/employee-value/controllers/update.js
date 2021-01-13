@@ -23,6 +23,7 @@ module.exports = async (req, res, next) => {
     let salary = dataEmployeeValue[0].salary
 
     if (!status) {
+      console.log('status: on-progress')
       const groups = dataEmployeeValue[0].jobValue
       const index = groups.findIndex(i => i.group.toUpperCase() === group.toUpperCase())
 
@@ -82,6 +83,7 @@ module.exports = async (req, res, next) => {
         updated: result.value
       })
     } else {
+      console.log('status: ' + status)
       await Employee.findOneAndUpdate({
         _id: ObjectID(dataEmployeeValue[0].idEmployee)
       }, {
