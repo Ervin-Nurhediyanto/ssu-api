@@ -2,12 +2,12 @@
   "name": "@point-hub/ssu-api",
   "version": "0.0.1",
   "description": "SSU API",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": ">=8.10.0"
   },
   "scripts": {
-    "serve": "nodemon server.js",
+    "serve": "nodemon index.js",
     "lint": "eslint",
     "test": "cross-env NODE_ENV=test mocha ./src/**/*.test.js",
     "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha ./src/**/*.test.js"
