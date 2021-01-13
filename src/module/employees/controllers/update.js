@@ -24,6 +24,9 @@ module.exports = async (req, res, next) => {
       }]
     }
 
+    console.log(req.body)
+    console.log(oldEmployee.salary)
+
     const result = await employee.findOneAndUpdate({
       _id: ObjectID(id)
     }, {
@@ -31,8 +34,8 @@ module.exports = async (req, res, next) => {
         idLocation: req.body.idLocation || oldEmployee.idLocation,
         name: req.body.name || oldEmployee.name,
         location: dataLocation[0].location.toUpperCase(),
-        total: req.body.total || oldEmployee.total,
-        salary: req.body.salary || oldEmployee.salary
+        total: Number(req.body.total) || oldEmployee.total,
+        salary: Number(req.body.salary) || oldEmployee.salary
       }
     }, {
       returnOriginal: false

@@ -9,12 +9,12 @@ module.exports = {
       bsonType: 'string',
       description: 'must be a string and is required'
     },
-    salaryEstimation: {
+    total: {
       bsonType: 'number',
       description: 'must be a number'
     },
     salary: {
-      type: 'number',
+      bsonType: 'number',
       description: 'must be a number'
     },
     idProject: {
@@ -25,11 +25,11 @@ module.exports = {
       bsonType: 'string',
       description: 'must be a string'
     },
-    created_by: {
+    createdBy: {
       bsonType: 'string',
       description: 'must be a string and is required'
     },
-    created_at: {
+    createdAt: {
       bsonType: 'date',
       description: 'must be a date'
     }
