@@ -84,16 +84,17 @@ module.exports = async (req, res, next) => {
       })
     } else {
       console.log('status: ' + status)
-      await Employee.findOneAndUpdate({
-        _id: ObjectID(dataEmployeeValue[0].idEmployee)
-      }, {
-        $set: {
-          total: dataEmployeeValue[0].total,
-          salary
-        }
-      }, {
-        returnOriginal: false
-      })
+
+      // await Employee.findOneAndUpdate({
+      //   _id: ObjectID(dataEmployeeValue[0].idEmployee)
+      // }, {
+      //   $set: {
+      //     total: dataEmployeeValue[0].total,
+      //     salary
+      //   }
+      // }, {
+      //   returnOriginal: false
+      // })
 
       const result = await EmployeeValue.findOneAndUpdate({
         _id: ObjectID(id)
