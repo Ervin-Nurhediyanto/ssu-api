@@ -98,7 +98,7 @@ module.exports = async (req, res, next) => {
         returnOriginal: false
       })
 
-      console.log(result.value.updated.idEmployee)
+      console.log(result)
 
       // const updateEmployee = await Employee.findOneAndUpdate({
       //   // _id: ObjectID(dataEmployeeValue[0].idEmployee)
