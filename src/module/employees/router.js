@@ -9,7 +9,7 @@ router.get('/:id', verifyAccess, controller.find)
 
 router.post('/', verifyAccess, controller.insert)
 
-router.put('/:id', verifyAccess, controller.update)
+router.put('/:id', controller.update)
 
 router.delete('/:id', verifyAccess, controller.delete)
 
