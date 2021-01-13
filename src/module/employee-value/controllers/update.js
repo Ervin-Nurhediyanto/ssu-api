@@ -62,7 +62,7 @@ module.exports = async (req, res, next) => {
         }
         //
 
-        salary = Number(rupiah)
+        salary = rupiah
       }
 
       const result = await EmployeeValue.findOneAndUpdate({
