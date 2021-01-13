@@ -100,7 +100,8 @@ module.exports = async (req, res, next) => {
 
       // Update Employee
       await Employee.findOneAndUpdate({
-        _id: ObjectID(dataEmployeeValue[0].idEmployee)
+        // _id: ObjectID(dataEmployeeValue[0].idEmployee)
+        _id: ObjectID('5ffe6e4aa2bdd61e78a82d8c')
       }, {
         $set: {
           total: result.total,
