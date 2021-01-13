@@ -14,8 +14,8 @@ module.exports = {
       description: 'must be a number'
     },
     unitValue: {
-      type: 'double',
-      description: 'must be a double'
+      type: 'number',
+      description: 'must be a number'
     },
     created_by: {
       bsonType: 'string',
