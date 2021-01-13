@@ -98,19 +98,19 @@ module.exports = async (req, res, next) => {
         returnOriginal: false
       })
 
-      console.log(result)
+      // console.log(result)
 
-      // const updateEmployee = await Employee.findOneAndUpdate({
-      //   // _id: ObjectID(dataEmployeeValue[0].idEmployee)
-      //   _id: ObjectID(result.value.updated.idEmployee)
-      // }, {
-      //   $set: {
-      //     total: result.value.updated.total,
-      //     salary: result.value.updated.salary
-      //   }
-      // }, {
-      //   returnOriginal: false
-      // })
+      Employee.findOneAndUpdate({
+        _id: ObjectID(dataEmployeeValue[0].idEmployee)
+        // _id: ObjectID(result.value.updated.idEmployee)
+      }, {
+        $set: {
+          total: totalScore,
+          salary
+        }
+      }, {
+        returnOriginal: false
+      })
 
       // console.log(updateEmployee)
 
