@@ -98,7 +98,7 @@ module.exports = async (req, res, next) => {
         returnOriginal: false
       })
 
-      await Employee.findOneAndUpdate({
+      const updateEmployee = await Employee.findOneAndUpdate({
         // _id: ObjectID(dataEmployeeValue[0].idEmployee)
         _id: ObjectID(result.value.updated.idEmployee)
       }, {
@@ -109,6 +109,8 @@ module.exports = async (req, res, next) => {
       }, {
         returnOriginal: false
       })
+
+      console.log(updateEmployee)
 
       res.status(200).json({
         updated: result.value
