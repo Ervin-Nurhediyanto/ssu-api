@@ -30,7 +30,9 @@ module.exports = async (req, res, next) => {
       $set: {
         idLocation: req.body.idLocation || oldEmployee.idLocation,
         name: req.body.name || oldEmployee.name,
-        location: dataLocation[0].location.toUpperCase()
+        location: dataLocation[0].location.toUpperCase(),
+        total: req.body.total || oldEmployee.total,
+        salary: req.body.salary || oldEmployee.salary
       }
     }, {
       returnOriginal: false
